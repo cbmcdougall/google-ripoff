@@ -23,7 +23,11 @@ app.get('/', (req, res) => {
 app.get('/:search', (req, res) => {
     const searchTerm = req.params.search.toLowerCase();
     const results = findResults(searchTerm).slice(0,10);
-    res.json(results);
+    if (results.length){
+        res.json(results);
+    } else {
+        res.status(404).json({error: `No results found for ${searchTerm}`})
+    }
 });
 
 
