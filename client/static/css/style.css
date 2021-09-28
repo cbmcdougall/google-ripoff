@@ -1,6 +1,5 @@
 section {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -13,6 +12,7 @@ section {
     margin: 50px 0px 20px 0px;
     padding: 5px 40px 5px 40px;
     border-radius: 20px;
+    border-width: 0.5px;
     border-color: #D3D3D3;
     
     background-color: transparent;
@@ -23,8 +23,14 @@ section {
 
 #search {
     font-family: 'Montserrat', sans-serif;
+    padding: 5px 25px 5px 25px;
+    margin-right: 10px;
+    border: none;
 }
 
 #surprise {
     font-family: 'Montserrat', sans-serif;
+    margin-left: 10px;
+    padding: 5px 15px 5px 15px;
+    border: none;
 }
