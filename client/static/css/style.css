@@ -34,3 +34,25 @@ section {
     padding: 5px 15px 5px 15px;
     border: none;
 }
+
+a {
+    margin-bottom: 5px;
+
+    font-size: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    margin-top: 2px;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+.show {
+    visibility: visible;
+    position: sticky;
+}
+
+.hide {
+    visibility: hidden;
+}
