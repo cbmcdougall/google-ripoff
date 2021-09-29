@@ -17,7 +17,7 @@ function escapeRegExp(string) {
 function findResults(search){
     // Just using String.prototype.includes() matches within words
     // Want to search for matches of whole words (so that e.g. "cat" doesn't match "domestiCATed dog")
-    const searchTerm = search.toLowerCase().split('_');
+    const searchTerm = search.toLowerCase().split('_'); // Space characters get passed in as underscores
     const results = data.filter(item => {
         const bodyTextWords = item.bodyText.toLowerCase();
         const findWords = searchTerm.map(term => {
