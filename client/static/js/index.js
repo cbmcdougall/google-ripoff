@@ -3,14 +3,16 @@ const surpriseButton = document.getElementById('surprise');
 const searchBar = document.getElementById('searchBar');
 const searchEngine = document.getElementById('searchEngine')
 const searchResults = document.getElementById('results');
+const logo = document.getElementById('logo');
 
 //function to show 10 search results
 function getSearchResult(e) {
     //handling spaces in searches
     const searchString = searchBar.value.replace(/\s/g, "_");
 
-    //hiding search bar and showing results
-    searchEngine.className = "hide";
+    //hiding logo and showing results
+    searchEngine.className = "moveUp";
+    logo.className = "hide";
     searchResults.className = "";
 
     fetch(`http://localhost:3000/${searchString}`)
