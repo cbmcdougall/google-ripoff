@@ -1,3 +1,7 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
 section {
     display: flex;
     justify-content: center;
@@ -11,7 +15,7 @@ section {
 
 #searchBar {
     margin: 50px 0px 20px 0px;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 15px;
     width: 600px;
     background-color: transparent;
     
@@ -19,16 +23,14 @@ section {
     border-width: 0.5px;
     border-color: #D3D3D3;
 
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
 }
 
 #search, #surprise {
-    font-family: 'Source Sans Pro', sans-serif;
     font-size: 15px;
 
-    padding: 10px 25px 10px 25px;
-    margin: 10px 15px 10px 15px;
+    padding: 10px 25px;
+    margin: 10px 15px;
     border: none;
     border-radius: 3px;
     width: 125px;
@@ -36,20 +38,17 @@ section {
 
 h1 {
     font-size: 25px;
-    font-family: 'Source Sans Pro', sans-serif;
 }
 
 a {
     margin-bottom: 5px;
 
     font-size: 25px;
-    font-family: 'Source Sans Pro', sans-serif;
     color: #273BE2
 }
 
 p {
     margin-top: 2px;
-    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .hide {
