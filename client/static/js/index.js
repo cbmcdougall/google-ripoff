@@ -16,6 +16,14 @@ function getSearchResult(e) {
     fetch(`http://localhost:3000/${searchString}`)
        .then(resp => resp.json())
        .then(resp => { 
+            if(resp.error) {
+                //displays message if no results are found
+                const noResults = document.createElement("H1");
+                const noResultsMessage = document.createTextNode(`No results found for \"${searchString}\".`);
+                noResults.appendChild(noResultsMessage);
+                searchResults.appendChild(noResults);
+            }
+
             for(let i = 0; i < resp.length; i++) //loop through all array elements
             {
                 //adding website name to search results
@@ -30,11 +38,10 @@ function getSearchResult(e) {
                 const websiteInfoText = document.createTextNode(`${resp[i].bodyText}`);
                 websiteInfo.appendChild(websiteInfoText);
                 searchResults.appendChild(websiteInfo);
-            }; 
+            };
         })
-        .catch(error => {
-            error = error.json();
-        });
+        .catch(err => { 
+            console.log(err) });
 }
 
 //function to show a random result
@@ -45,24 +52,22 @@ function getSurpriseResult(e) {
     searchResults.className = "";
 
     fetch(`http://localhost:3000/${searchString}/random`)
-       .then(resp => {
-        //adding website name to page
-        const websiteName = document.createElement("A");
-        const websiteNameText = document.createTextNode(`${resp.header}`);
-        websiteName.setAttribute("href", `${resp.link}`);
-        websiteName.appendChild(websiteNameText);
-        searchResults.appendChild(websiteName);
-        
-        //adding website info to page
-        const websiteInfo = document.createElement("P");
-        const websiteInfoText = document.createTextNode(`${resp.bodyText}`);
-        websiteInfo.appendChild(websiteInfoText);
-        searchResults.appendChild(websiteInfo);
-       } )
-       .catch(error => {
-           error.json();
-       });
-
+       .then(resp => resp.json())
+       .then(data => {
+        if(data.error) {
+            //displays message if no results are found
+            const noResults = document.createElement("H1");
+            const noResultsMessage = document.createTextNode(`No results found for \"${searchString}\".`);
+            noResults.appendChild(noResultsMessage);
+            searchResults.appendChild(noResults);
+        }
+        else {
+            //takes you to a random page based on the search term
+            window.location.replace(`${data.link}`);
+        }
+       })
+       .catch(err => { 
+        console.log(err) });
 }
 
 searchButton.addEventListener('click', e => {
