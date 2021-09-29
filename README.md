@@ -27,7 +27,11 @@
 [x] Added handling of no search results.\
 [x] Added route to retrieve a random search result.\
 [x] Updated search function to match whole words using regex.\
-[x] Updated search function to handle multiple words in the search term.
+[x] Updated search function to handle multiple words in the search term.\
+[x] Moved server initialisation to `./index.js`.
+
+### server/tests
+[x] Added `./routes.spec.js` to carry out some tests on the API routes.
 
 ### client/index.html
 [x] Added initial HTML structure/elements.\
@@ -38,7 +42,7 @@
 ### client/static/css/style.css
 [x] Added initial styling.\
 [x] Updated styling of buttons.\
-[x] Added classes for showing/hiding homepage and search results.
+[x] Added classes for showing/hiding homepage and search results.\
 [x] Added classes to hide HTML elements after submitted search.
 
 ### client/static/js/index.js
@@ -49,18 +53,18 @@
 [x] Fix functions retrieving search result data.\
 [x] Added rendering of no results message.\
 [x] Added hiding of HTML elements after submitted search.\
-[x] Added functionality to move search bar to top of page when displaying results, allowing user to make another search.
+[x] Added functionality to move search bar to top of page when displaying results, allowing user to make another search.\
+[x] Fixed bug where new searches appended results and didn't clear the old results.
 
 ### client/static
 [x] Added logo to `./images` and added into `../index.html` and `./css/style.css`
 
 ## Planned changes/features
 [] Improvements to search function to be less strict but still relevant results.\
-[] Write a testing suite.\
 [] Possibly improve catching of errors in client-side API call.
 
 ## Bugs
-[] Upon successive searches results are appended and old results are not cleared first.
+[x] Upon successive searches results are appended and old results are not cleared first.
 
 ## Wins & Challenges
 
