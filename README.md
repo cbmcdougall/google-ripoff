@@ -11,6 +11,8 @@
 * Server
     * Run `npm start` to start the server.
     * If doing dev work, run `npm run dev` to start the server with nodemon.
+    * Run `npm test` to start the testing suite.
+    * Run `npm run coverage` to check test coverage.
 * Client
     * Open main page `index.html`
     * Input your search into the search bar and click one of the submit buttons to get results!
