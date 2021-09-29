@@ -9,26 +9,25 @@ const firstHeader = document.getElementById('firstHeader');
 
 //function to show 10 search results
 function getSearchResult(e) {
-    const searchString = searchBar.value;
+    const searchString = searchBar.value.replace(/\s/g, "_");
 
     searchEngine.className = "hide";
-    searchResults.className = "show";
-
-    console.log(`http://localhost:3000/${searchString}`);
 
     fetch(`http://localhost:3000/${searchString}`)
        .then(resp => resp.json())
        .then(resp => { //loop through all array elements
-            searchResults.append(
-                `<a href="${resp[0].link}">${resp[0].header}</a>` +
-                `<p>${resp[0].bodyText}</p>`
-            );
-        });
-
-
-    //handle error for no results
-
-
+            for(let i = 0; i < resp.length; i++)
+            {
+                searchResults.append(
+                    `<a href="${resp[i].link}">${resp[i].header}</a>` +
+                    `<p>${resp[i].bodyText}</p>`
+                );
+            }
+            
+        })
+        // .catch(error => {
+        //     error = error.json();
+        // });
 }
 
 //function to show a random result
@@ -36,12 +35,11 @@ function getSurpriseResult(e) {
     const searchString = searchBar.value;
 
     searchEngine.className = "hide";
-    searchResults.className = "show";
 
 //     fetch(`http://localhost:3000/${searchString}/random`)
 //        .then(resp => )
+//        .catch(error =>);
 
-//handle error for no results
 }
 
 searchButton.addEventListener('click', e => {

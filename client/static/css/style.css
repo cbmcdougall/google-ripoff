@@ -10,7 +10,9 @@ section {
 
 #searchBar {
     margin: 50px 0px 20px 0px;
-    padding: 5px 40px 5px 40px;
+    padding: 10px 15px 10px 15px;
+    width: 400px;
+    
     border-radius: 20px;
     border-width: 0.5px;
     border-color: #D3D3D3;
@@ -48,11 +50,7 @@ p {
     font-family: 'Montserrat', sans-serif;
 }
 
-.show {
-    visibility: visible;
-    position: sticky;
-}
-
 .hide {
     visibility: hidden;
+    position: -1000px;
 }
