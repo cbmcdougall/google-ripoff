@@ -22,7 +22,7 @@
 
 ## Changelog
 
-### server/app.js
+### server/assets/server.js
 [x] Set up initial working server\
 [x] Added function to search for inputted search string in `data.json` and return the resulting matches.\
 [x] Added route to retrieve results on a search.\
@@ -30,7 +30,8 @@
 [x] Added route to retrieve a random search result.\
 [x] Updated search function to match whole words using regex.\
 [x] Updated search function to handle multiple words in the search term.\
-[x] Moved server initialisation to `./index.js`.
+[x] Moved server initialisation to `../index.js`.\
+[x] Rename to `server.js`, moved helper functions to `./helpers.js`.
 
 ### server/tests
 [x] Added `./routes.spec.js` to carry out some tests on the API routes.
