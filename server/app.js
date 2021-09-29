@@ -7,23 +7,27 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+
+// Escapes RegExp characters in a string to be used in RegExp searches
 function escapeRegExp(string) {
-    // In case the search word includes RegEx characters
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
 }
 
-// To Do: How are we searching for strings with space characters in them e.g. 'NGC 6946'?
-
-// Searches for the inputted search string in the bodyText values in the data array, returning the parent Objects
+// Search for a given search term
 function findResults(search){
     // const results = data.filter(item => item.bodyText.toLowerCase().includes(search));
+    // Just using String.prototype.includes() matches within words
+    // Want to search for matches of whole words (so that e.g. "cat" doesn't match "domestiCATed dog")
+    const searchTerm = search.toLowerCase().split('_');
     const results = data.filter(item => {
-        // Just using String.prototype.includes() matches within words
-        // Want to search for matches of whole words (so that e.g. "cat" doesn't match "domestiCATed dog")
-        let bodyTextWords = item.bodyText.toLowerCase();
-        let regex = new RegExp(`\\b${escapeRegExp(search)}\\b`);
-        let findWord = bodyTextWords.search(regex);
-        return findWord!=-1 ? true : false
+        const bodyTextWords = item.bodyText.toLowerCase();
+        const findWords = searchTerm.map(term => {
+            const regex = new RegExp(`\\b${escapeRegExp(term)}\\b`);
+            const findWord = bodyTextWords.search(regex);
+            return findWord;            
+        });
+        const noWordsFound = findWords.includes(-1);
+        return !noWordsFound
     });
     return results;
 };
