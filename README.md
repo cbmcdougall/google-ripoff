@@ -1,4 +1,4 @@
-# Our google rip-off!
+# Our google rip-off, ctrl+f!
 
 ## Installation & Usage
 
@@ -45,9 +45,10 @@
 [x] Refined functions to extract the JSON data from API and render results on the client.\
 [x] Add handling of space characters in search term to correctly pass into API call.
 
-## Planned features
-[] Ideally would like to display results on a new HTML page.\
-[] Improvements to search function to be less strict but still relevant results.
+## Planned changes/features
+[] Move search bar to top of page when displaying results, allowing user to make another search.\
+[] Improvements to search function to be less strict but still relevant results.\
+[] Write a testing suite.\
 
 ## Bugs
 []
