@@ -17,7 +17,12 @@ function getSearchResult(e) {
 
     fetch(`http://localhost:3000/${searchString}`)
        .then(resp => resp.json())
-       .then(resp => { 
+       .then(resp => {
+           //removes previous search results
+            while (searchResults.hasChildNodes()) {
+            searchResults.removeChild(searchResults.lastChild);
+            };
+
             if(resp.error) {
                 //displays message if no results are found
                 const noResults = document.createElement("H1");
@@ -27,7 +32,7 @@ function getSearchResult(e) {
             }
 
             for(let i = 0; i < resp.length; i++) //loop through all array elements
-            {
+            {   
                 //adding website name to search results
                 const websiteName = document.createElement("A");
                 const websiteNameText = document.createTextNode(`${resp[i].header}`);
@@ -65,7 +70,7 @@ function getSurpriseResult(e) {
         }
         else {
             //takes you to a random page based on the search term
-            window.location.replace(`${data.link}`);
+            window.location.href = `${data.link}`;
         }
        })
        .catch(err => { 
