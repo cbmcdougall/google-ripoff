@@ -1,6 +1,7 @@
 const searchButton = document.getElementById('search');
 const surpriseButton = document.getElementById('surprise');
 const searchBar = document.getElementById('searchBar');
+const barAndButtons = document.getElementById('barAndButtons');
 const searchEngine = document.getElementById('searchEngine')
 const searchResults = document.getElementById('results');
 const logo = document.getElementById('logo');
@@ -12,6 +13,7 @@ function getSearchResult(e) {
 
     //hiding logo and showing results
     searchEngine.className = "moveUp";
+    barAndButtons.className = "lineUp";
     logo.className = "hide";
     searchResults.className = "";
 
