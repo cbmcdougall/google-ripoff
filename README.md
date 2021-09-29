@@ -24,7 +24,7 @@
 
 ### server/assets/server.js
 [x] Set up initial working server\
-[x] Added function to search for inputted search string in `data.json` and return the resulting matches.\
+[x] Added function to search for inputted search string in `./data.json` and return the resulting matches.\
 [x] Added route to retrieve results on a search.\
 [x] Added handling of no search results.\
 [x] Added route to retrieve a random search result.\
@@ -38,7 +38,7 @@
 
 ### client/index.html
 [x] Added initial HTML structure/elements.\
-[x] Restructuring elements for `static/js/index.js` script.\
+[x] Restructuring elements for `./static/js/index.js` script.\
 [x] Added placeholder elements for search results.\
 [x] Added favicon.
 
