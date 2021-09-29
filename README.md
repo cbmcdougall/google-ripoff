@@ -46,7 +46,8 @@
 [x] Added initial styling.\
 [x] Updated styling of buttons.\
 [x] Added classes for showing/hiding homepage and search results.\
-[x] Added classes to hide HTML elements after submitted search.
+[x] Added classes to hide HTML elements after submitted search.\
+[x] Added class to line up the search bar and buttons at top of results page.
 
 ### client/static/js/index.js
 [x] Added event listeners for search submission.\
