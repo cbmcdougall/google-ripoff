@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const data = require('./data.json')
 
-const port = 3000;
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -59,7 +58,4 @@ app.get('/:search/random', (req, res) => {
     }
 });
 
-// Start server
-app.listen(port, () => {
-    console.log(`Express recently departed from port ${port}`)
-});
+module.exports = app;
