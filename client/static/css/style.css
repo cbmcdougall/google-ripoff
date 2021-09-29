@@ -50,8 +50,8 @@ p {
 }
 
 .hide {
-   position: relative;
-   overflow: hidden;
+   position: absolute;
+   left: -999px;
 }
 
 

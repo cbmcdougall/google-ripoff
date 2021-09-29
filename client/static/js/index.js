@@ -21,6 +21,7 @@ function getSearchResult(e) {
                 //adding website name to search results
                 const websiteName = document.createElement("A");
                 const websiteNameText = document.createTextNode(`${resp[i].header}`);
+                websiteName.setAttribute("href", `${resp[i].link}`);
                 websiteName.appendChild(websiteNameText);
                 searchResults.appendChild(websiteName);
                 
@@ -29,11 +30,6 @@ function getSearchResult(e) {
                 const websiteInfoText = document.createTextNode(`${resp[i].bodyText}`);
                 websiteInfo.appendChild(websiteInfoText);
                 searchResults.appendChild(websiteInfo);
-
-
-                // const headerText = `<a href="${resp[i].link}">${resp[i].header}</a>`;
-                // const bodyText = `<p>${resp[i].bodyText}</p>`;
-                // searchResults.append(headerText, bodyText);
             }; 
         })
         .catch(error => {
@@ -46,10 +42,26 @@ function getSurpriseResult(e) {
     const searchString = searchBar.value;
 
     searchEngine.className = "hide";
+    searchResults.className = "";
 
-//     fetch(`http://localhost:3000/${searchString}/random`)
-//        .then(resp => )
-//        .catch(error =>);
+    fetch(`http://localhost:3000/${searchString}/random`)
+       .then(resp => {
+        //adding website name to page
+        const websiteName = document.createElement("A");
+        const websiteNameText = document.createTextNode(`${resp.header}`);
+        websiteName.setAttribute("href", `${resp.link}`);
+        websiteName.appendChild(websiteNameText);
+        searchResults.appendChild(websiteName);
+        
+        //adding website info to page
+        const websiteInfo = document.createElement("P");
+        const websiteInfoText = document.createTextNode(`${resp.bodyText}`);
+        websiteInfo.appendChild(websiteInfoText);
+        searchResults.appendChild(websiteInfo);
+       } )
+       .catch(error => {
+           error.json();
+       });
 
 }
 
