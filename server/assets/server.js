@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const findResults = require('./helpers')
+const findResults = require('./api_helpers')
 
 const app = express();
 app.use(express.json());
