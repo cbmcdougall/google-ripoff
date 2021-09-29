@@ -32,32 +32,44 @@
 ### client/index.html
 [x] Added initial HTML structure/elements.\
 [x] Restructuring elements for `static/js/index.js` script.\
-[x] Added placeholder elements for search results.
+[x] Added placeholder elements for search results.\
+[x] Added favicon.
 
 ### client/static/css/style.css
 [x] Added initial styling.\
 [x] Updated styling of buttons.\
 [x] Added classes for showing/hiding homepage and search results.
+[x] Added classes to hide HTML elements after submitted search.
 
 ### client/static/js/index.js
 [x] Added event listeners for search submission.\
 [x] Added functions to call API to get search results.\
 [x] Refined functions to extract the JSON data from API and render results on the client.\
-[x] Add handling of space characters in search term to correctly pass into API call.
+[x] Add handling of space characters in search term to correctly pass into API call.\
+[x] Fix functions retrieving search result data.\
+[x] Added rendering of no results message.\
+[x] Added hiding of HTML elements after submitted search.\
+[x] Added functionality to move search bar to top of page when displaying results, allowing user to make another search.
+
+### client/static
+[x] Added logo to `./images` and added into `../index.html` and `./css/style.css`
 
 ## Planned changes/features
-[] Move search bar to top of page when displaying results, allowing user to make another search.\
 [] Improvements to search function to be less strict but still relevant results.\
 [] Write a testing suite.\
+[] Possibly improve catching of errors in client-side API call.
 
 ## Bugs
-[]
+[] Upon successive searches results are appended and old results are not cleared first.
 
 ## Wins & Challenges
 
 ### Wins
-*
+* Getting a decent search function to work
+* Workflow went smoothly, no git issues
+* Getting the API set up was simple
 
 ### Challenges
-*
+* Trying to get the results rendering to work correctly using append
+* Refining the search
 
