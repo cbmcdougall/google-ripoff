@@ -15,8 +15,6 @@ function escapeRegExp(string) {
 
 // Search for a given search term
 function findResults(search){
-        // Original method for reference
-        // const results = data.filter(item => item.bodyText.toLowerCase().includes(search));
     // Just using String.prototype.includes() matches within words
     // Want to search for matches of whole words (so that e.g. "cat" doesn't match "domestiCATed dog")
     const searchTerm = search.toLowerCase().split('_');
@@ -27,7 +25,7 @@ function findResults(search){
             const findWord = bodyTextWords.search(regex);
             return findWord;            
         });
-        const noWordsFound = findWords.includes(-1);
+        const noWordsFound = findWords.includes(-1);    // Gives true if no words were found
         return !noWordsFound
     });
     return results;
