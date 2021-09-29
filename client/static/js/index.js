@@ -11,12 +11,16 @@ function getSearchResult(e) {
     //handling spaces in searches
     const searchString = searchBar.value.replace(/\s/g, "_");
 
-    //hiding logo and showing results
+    //showing results and smaller logo
     searchEngine.className = "moveUp";
     barAndButtons.className = "lineUp";
-    logo.className = "hide";
     searchResults.className = "";
 
+    logo.className = "hide";
+    const smallLogo = document.createElement("IMG");
+    smallLogo.setAttribute("src", "images/Small crtlf logo.png");
+    barAndButtons.prepend(smallLogo);
+    
     fetch(`http://localhost:3000/${searchString}`)
        .then(resp => resp.json())
        .then(resp => {

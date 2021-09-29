@@ -10,11 +10,10 @@ section {
 
 #logo {
     margin-top: 100px;
-    margin-bottom: 0px;
 }
 
 #searchBar {
-    margin: 30px 15px 30px 15px;
+    margin: 30px 15px;
     padding: 10px 15px;
     width: 600px;
     background-color: transparent;
@@ -34,6 +33,11 @@ section {
     border: none;
     border-radius: 3px;
     width: 125px;
+}
+
+#barAndButtons {
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 h1 {
@@ -62,6 +66,5 @@ p {
 
 .lineUp {
     display: flex;
+    margin-top: 20px;
 }
-
-
