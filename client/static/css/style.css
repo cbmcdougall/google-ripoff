@@ -1,0 +1,70 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    margin-top: 100px;
+}
+
+#searchBar {
+    margin: 30px 15px;
+    padding: 10px 15px;
+    width: 600px;
+    background-color: transparent;
+    
+    border-radius: 20px;
+    border-width: 0.5px;
+    border-color: #D3D3D3;
+
+    font-size: 18px;
+}
+
+#search, #surprise {
+    font-size: 15px;
+
+    padding: 10px 25px;
+    margin: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    width: 125px;
+}
+
+#barAndButtons {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+a {
+    margin-bottom: 5px;
+
+    font-size: 25px;
+    color: #273BE2
+}
+
+p {
+    margin-top: 2px;
+}
+
+.hide {
+   position: absolute;
+   left: -999px;
+}
+
+.moveUp {
+    position: sticky;
+}
+
+.lineUp {
+    display: flex;
+    margin-top: 20px;
+}
