@@ -6,51 +6,59 @@ section {
 
 #logo {
     margin-top: 100px;
+    margin-bottom: 0px;
 }
 
 #searchBar {
     margin: 50px 0px 20px 0px;
     padding: 10px 15px 10px 15px;
-    width: 400px;
+    width: 600px;
+    background-color: transparent;
     
     border-radius: 20px;
     border-width: 0.5px;
     border-color: #D3D3D3;
-    
-    background-color: transparent;
 
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
 }
 
-#search {
-    font-family: 'Montserrat', sans-serif;
-    padding: 5px 25px 5px 25px;
-    margin-right: 10px;
+#search, #surprise {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+
+    padding: 10px 25px 10px 25px;
+    margin: 10px 15px 10px 15px;
     border: none;
+    border-radius: 3px;
+    width: 125px;
 }
 
-#surprise {
-    font-family: 'Montserrat', sans-serif;
-    margin-left: 10px;
-    padding: 5px 15px 5px 15px;
-    border: none;
+h1 {
+    font-size: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 a {
     margin-bottom: 5px;
 
     font-size: 25px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #273BE2
 }
 
 p {
     margin-top: 2px;
-
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .hide {
-    visibility: hidden;
-    position: -1000px;
+   position: absolute;
+   left: -999px;
 }
+
+.moveUp {
+    position: sticky;
+}
+
+
