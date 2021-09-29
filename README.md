@@ -19,6 +19,23 @@
         * "Search" will bring you a list of results.
         * "Surprise Me" will direct you to a random result.
         
+## Planned changes/features
+[] Improvements to search function to be less strict but still relevant results.\
+[] Possibly improve catching of errors in client-side API call.
+
+## Bugs
+[x] Upon successive searches results are appended and old results are not cleared first.
+
+## Wins & Challenges
+
+### Wins
+* Getting a decent search function to work
+* Workflow went smoothly, no git issues
+* Getting the API set up was simple
+
+### Challenges
+* Trying to get the results rendering to work correctly using append
+* Refining the search
 
 ## Changelog
 
@@ -31,10 +48,11 @@
 [x] Updated search function to match whole words using regex.\
 [x] Updated search function to handle multiple words in the search term.\
 [x] Moved server initialisation to `../index.js`.\
-[x] Rename to `server.js`, moved helper functions to `./helpers.js`.
+[x] Rename to `server.js`, moved helper functions to `./api_helpers.js`.
 
 ### server/tests
-[x] Added `./routes.spec.js` to carry out some tests on the API routes.
+[x] Added `./routes.spec.js` to carry out tests on the API routes.\
+[x] Added `./api_helpers.spec.js` to carry out tests on api helper functions.
 
 ### client/index.html
 [x] Added initial HTML structure/elements.\
@@ -62,22 +80,3 @@
 
 ### client/static
 [x] Added logo to `./images` and added into `../index.html` and `./css/style.css`
-
-## Planned changes/features
-[] Improvements to search function to be less strict but still relevant results.\
-[] Possibly improve catching of errors in client-side API call.
-
-## Bugs
-[x] Upon successive searches results are appended and old results are not cleared first.
-
-## Wins & Challenges
-
-### Wins
-* Getting a decent search function to work
-* Workflow went smoothly, no git issues
-* Getting the API set up was simple
-
-### Challenges
-* Trying to get the results rendering to work correctly using append
-* Refining the search
-
