@@ -5,23 +5,32 @@ const barAndButtons = document.getElementById('barAndButtons');
 const searchEngine = document.getElementById('searchEngine')
 const searchResults = document.getElementById('results');
 const logo = document.getElementById('logo');
+let addSmallLogo = true;
 
 //function to show 10 search results
-function getSearchResult(e) {
+function getSearchResult() {
     //handling spaces in searches
-    const searchString = searchBar.value.replace(/\s/g, "_");
+    const searchString = searchBar.value;
 
     //showing results and smaller logo
     searchEngine.className = "moveUp";
     barAndButtons.className = "lineUp";
     searchResults.className = "";
-
-    logo.className = "hide";
-    const smallLogo = document.createElement("IMG");
-    smallLogo.setAttribute("src", "images/Small crtlf logo.png");
-    barAndButtons.prepend(smallLogo);
     
-    fetch(`http://localhost:3000/${searchString}`)
+    if (addSmallLogo) {
+        // Only show small logo on first rendering of results page
+        logo.className = "hide";
+        // Small logo links back to homepage
+        const smallLogoLink = document.createElement("A");
+        smallLogoLink.setAttribute("href", "./index.html");
+        const smallLogo = document.createElement("IMG");
+        smallLogo.setAttribute("src", "images/Small crtlf logo.png");
+        smallLogoLink.appendChild(smallLogo);
+        barAndButtons.prepend(smallLogoLink);
+        addSmallLogo = false;
+    }
+    
+    fetch(`http://localhost:3000/${searchString.replace(/\s/g, "_")}`)
        .then(resp => resp.json())
        .then(resp => {
            //removes previous search results
@@ -53,18 +62,17 @@ function getSearchResult(e) {
                 searchResults.appendChild(websiteInfo);
             };
         })
-        .catch(err => { 
-            console.log(err) });
+        .catch(err => { console.log(err) });
 }
 
 //function to show a random result
-function getSurpriseResult(e) {
+function getSurpriseResult() {
     const searchString = searchBar.value;
 
     searchEngine.className = "hide";
     searchResults.className = "";
 
-    fetch(`http://localhost:3000/${searchString}/random`)
+    fetch(`http://localhost:3000/${searchString.replace(/\s/g, "_")}/random`)
        .then(resp => resp.json())
        .then(data => {
         if(data.error) {
@@ -79,16 +87,17 @@ function getSurpriseResult(e) {
             window.location.href = `${data.link}`;
         }
        })
-       .catch(err => { 
-        console.log(err) });
+       .catch(err => { console.log(err) });
 }
 
 searchButton.addEventListener('click', e => {
     e.preventDefault();
-    getSearchResult(e);
+    getSearchResult();
 });
 
 surpriseButton.addEventListener('click', e => {
     e.preventDefault();
-    getSurpriseResult(e);
+    getSurpriseResult();
 });
+
+module.exports = { getSearchResult, getSurpriseResult } // For testing
